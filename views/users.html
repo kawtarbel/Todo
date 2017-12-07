@@ -1,0 +1,11 @@
+<br>
+<div class="center" style="color:purple">
+        Users:
+    </div>
+    <div class="card-content">
+        <div class="collection" style="border-color: purple">
+            <a ng-repeat="user in users" href="#/users/{{user.id}}/todos" style="color:black" class="collection-item">
+                {{user.name}}
+            </a>
+        </div>
+    </div>

@@ -1,0 +1,16 @@
+<br>
+    <div class="center" style="color:purple">
+        About {{user.name}}
+    </div>
+    <div class="card-content">
+        <div class="collection" style="border-color: purple">
+            <div ng-repeat="todo in todos | filter: userId" class="collection-item" ng-click="todo.completed = !todo.completed">
+                <span ng-class="{'striped': todo.completed}">
+                    {{todo.title}}
+                    <span class="secondary-content">
+                        <i style="font-size: 20px; color: purple" class="fa" ng-class="{'fa-square-o': !todo.completed, 'fa-check-square-o': todo.completed}"></i>
+                    </span>
+                </span>
+            </div>
+        </div>
+    </div>

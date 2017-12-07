@@ -1,0 +1,47 @@
+
+        <br>
+        <div class="row" style="color:purple">
+                <div class="col m4" >
+                    <strong ng-click="orderBy='name'; reverse = !reverse;" style="color:purple">
+                        Name
+                        <i class="fa fa-sort" ng-show="orderBy!='name'"></i>
+                        <i ng-class="{'fa-sort-desc': !reverse && orderBy=='name', 'fa-sort-asc': reverse && orderBy=='name'}" class="fa"></i>
+                    </strong>
+                </div>
+                <div class="col m4">
+                    <strong ng-click="orderBy='title'; reverse = !reverse;" style="color:purple">
+                        Title
+                        <i class="fa fa-sort" ng-show="orderBy!='title'"></i>
+                        <i ng-class="{'fa-sort-desc': !reverse && orderBy=='title', 'fa-sort-asc': reverse && orderBy=='title'}" class="fa"></i>
+                    </strong>
+                </div>
+                <div class="col m4">
+                    <strong ng-click="orderBy='body'; reverse = !reverse;" style="color:purple">
+                        Body
+                        <i class="fa fa-sort" ng-show="orderBy!='body'"></i>
+                        <i ng-class="{'fa-sort-desc': !reverse && orderBy=='body', 'fa-sort-asc': reverse && orderBy=='body'}" class="fa"></i>
+                    </strong>
+                </div>
+            </div>
+        <div class="row">
+            <div class="col m4">
+                <input type="text" ng-model="search.name" placeholder="Name" style="color:purple">
+            </div>
+            <div class="col m4">
+                <input type="text" ng-model="search.title" placeholder="Title" style="color:purple">
+            </div>
+            <div class="col m4">
+                <input type="text" ng-model="search.body" placeholder="Body" style="color:purple">
+            </div>
+        </div>
+        <div class="row" ng-repeat="post in posts | filter: search | orderBy: orderBy : reverse">
+            <div class="col m4">
+                {{post.name = users[post.userId-1].name}}
+            </div>
+            <div class="col m4">
+                {{post.title}}
+            </div>
+            <div class="col m4">
+                {{post.body}}
+            </div>
+        </div>
